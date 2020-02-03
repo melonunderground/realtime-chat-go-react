@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - stable
 install:
-  - npm install
   - cd frontend
+  - npm install
+
 script:
   - npm test
