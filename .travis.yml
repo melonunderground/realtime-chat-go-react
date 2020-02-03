@@ -5,16 +5,10 @@ node_js:
 branches:
   only:
   - master
-cache:
-  directories:
-  - node_modules
-before_install:
-- npm update
-install:
-- npm install
+
 script:
 
 - cd frontend
 - npm test
-- npm run coveralls
-- npm run test:coveralls
+# - npm run coveralls
+# - npm run test:coveralls
