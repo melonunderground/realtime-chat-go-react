@@ -12,17 +12,17 @@
 
 
 language: go
-  go:
-    - stable
-  before_install:
-    - go get github.com/mattn/goveralls
-  install:
-      - cd backend
-      - go get -t -v
-  script:
-    - mkdir bin
-    - pwd
-    - ls -alF
-    - env GOOS=linux GOARCH=amd64 go build -o bin/realtime-chat
-    - $GOPATH/bin/goveralls -service=travis-ci
+  # go:
+  #   - stable
+  # before_install:
+  #   - go get github.com/mattn/goveralls
+  # install:
+  #     - cd backend
+  #     - go get -t -v
+  # script:
+  #   - mkdir bin
+  #   - pwd
+  #   - ls -alF
+  #   - env GOOS=linux GOARCH=amd64 go build -o bin/realtime-chat
+  #   - $GOPATH/bin/goveralls -service=travis-ci
   
