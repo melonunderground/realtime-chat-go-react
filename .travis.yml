@@ -3,7 +3,7 @@ node_js:
   - stable
 install:
   - cd frontend
-  - npm install
+  - npm ci
 
 script:
   - npm run test -- --coverage
