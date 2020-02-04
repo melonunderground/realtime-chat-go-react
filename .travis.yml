@@ -1,26 +1,28 @@
-language: go
-  go:
-    - 1.13
-  before_install:
-    - go get github.com/mattn/goveralls
-  install:
-      - cd backend
-      - go get -t -v
-  script:
-    - mkdir bin
-    - pwd
-    - ls -alF
-    - env GOOS=linux GOARCH=amd64 go build -o bin/realtime-chat
-    - $GOPATH/bin/goveralls -service=travis-ci
-  
-# language: node_js
-# node_js:
-#   - stable
-# install:
-#   - cd frontend
-#   - npm ci
+language: node_js
+node_js:
+  - stable
+install:
+  - cd frontend
+  - npm ci
 
-# script:
-#   - npm run test -- --coverage
-# after_script:
-#   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
+script:
+  - npm run test -- --coverage
+after_script:
+  - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
+
+
+# language: go
+#   go:
+#     - 1.13
+#   before_install:
+#     - go get github.com/mattn/goveralls
+#   install:
+#       - cd backend
+#       - go get -t -v
+#   script:
+#     - mkdir bin
+#     - pwd
+#     - ls -alF
+#     - env GOOS=linux GOARCH=amd64 go build -o bin/realtime-chat
+#     - $GOPATH/bin/goveralls -service=travis-ci
+  
