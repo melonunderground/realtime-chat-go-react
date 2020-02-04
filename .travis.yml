@@ -3,12 +3,15 @@ language: go
     - 1.13
   before_install:
     - go get github.com/mattn/goveralls
+  install:
+      - go get -t -v
   script:
+    - mkdir bin
+    - pwd
+    - ls -alF
+    - env GOOS=linux GOARCH=amd64 go build -o bin/realtime-chat
     - $GOPATH/bin/goveralls -service=travis-ci
   
-    
-
-
 # language: node_js
 # node_js:
 #   - stable
