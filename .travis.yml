@@ -17,10 +17,7 @@ language: go
 
   before_script:
     - go vet ./...
-    
-  install:
-    - cd backend
-    - go get -t -v
+
 
 
 
